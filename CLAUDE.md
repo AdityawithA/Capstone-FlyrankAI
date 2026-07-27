@@ -13,6 +13,10 @@ This repository is used for learning AI-assisted software development.
 - Follow best practices
 - Use Conventional Commits
 
+## Claude Subscriptions
+
+- not provides
+
 ## Commit Style
 
 feat:
