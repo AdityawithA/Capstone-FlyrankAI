@@ -1,1 +1,468 @@
 #vague
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f12;
+    --panel: #14171c;
+    --border: #23262d;
+    --text: #eceef1;
+    --text-dim: #8b909a;
+    --accent: #e8a33d;
+    --accent-dim: #7a5a25;
+    --error: #e8615c;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 860px) {
+    body { grid-template-columns: 1fr; }
+    .terminal-side { display: none; }
+  }
+
+  /* ---------- LEFT: terminal panel ---------- */
+  .terminal-side {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(232,163,61,0.06), transparent 40%),
+      var(--panel);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px;
+  }
+
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 48px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+
+  .terminal-window {
+    background: #0a0c0f;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .terminal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #111319;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tb-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .tb-dot.red { background: #e8615c; }
+  .tb-dot.yellow { background: #e8c33d; }
+  .tb-dot.green { background: #4dd67a; }
+
+  .terminal-body {
+    padding: 22px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px;
+    line-height: 1.9;
+    color: #b8bdc6;
+    min-height: 180px;
+  }
+
+  .prompt-line { display: flex; gap: 8px; }
+  .prompt-sym { color: var(--accent); }
+  .typed { color: var(--text); }
+  .caret {
+    display: inline-block;
+    width: 7px;
+    height: 15px;
+    background: var(--accent);
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+    vertical-align: text-bottom;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .terminal-output { color: var(--text-dim); }
+  .terminal-output .ok { color: #4dd67a; }
+
+  .tagline {
+    margin-top: 40px;
+    max-width: 380px;
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  /* ---------- RIGHT: form panel ---------- */
+  .form-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+
+  .form-wrap {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .form-wrap h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .form-wrap .sub {
+    color: var(--text-dim);
+    font-size: 14.5px;
+    margin: 0 0 32px;
+  }
+
+  .sub a { color: var(--accent); text-decoration: none; }
+  .sub a:hover { text-decoration: underline; }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: 7px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #14171c;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14.5px;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .field input::placeholder { color: #565b64; }
+
+  .field input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(232,163,61,0.15);
+  }
+
+  .field input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .field.error input {
+    border-color: var(--error);
+  }
+
+  .error-msg {
+    color: var(--error);
+    font-size: 12.5px;
+    margin-top: 6px;
+    display: none;
+  }
+
+  .field.error .error-msg { display: block; }
+
+  .row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4px 0 24px;
+    font-size: 13.5px;
+  }
+
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .remember input {
+    accent-color: var(--accent);
+    width: 15px;
+    height: 15px;
+  }
+
+  .row-between a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .row-between a:hover { text-decoration: underline; }
+
+  button.submit {
+    width: 100%;
+    padding: 13px;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: #14171c;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+
+  button.submit:hover { background: #f0b153; }
+  button.submit:active { transform: scale(0.99); }
+
+  button.submit:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 26px 0;
+    color: var(--text-dim);
+    font-size: 12.5px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .oauth {
+    display: flex;
+    gap: 10px;
+  }
+
+  .oauth button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13.5px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .oauth button:hover {
+    border-color: #3a3f48;
+    background: #181b21;
+  }
+
+  .status {
+    margin-top: 18px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--text-dim);
+    min-height: 18px;
+  }
+
+  .status.success { color: #4dd67a; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .caret { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="terminal-side">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      devbase
+    </div>
+
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <span class="tb-dot red"></span>
+        <span class="tb-dot yellow"></span>
+        <span class="tb-dot green"></span>
+      </div>
+      <div class="terminal-body">
+        <div class="prompt-line">
+          <span class="prompt-sym">$</span>
+          <span class="typed" id="typedLine"></span><span class="caret"></span>
+        </div>
+        <div class="terminal-output" id="outputLines" style="margin-top:6px; opacity:0;"></div>
+      </div>
+    </div>
+
+    <p class="tagline">
+      Sign in to pick up where you left off — your deployments, projects, and environment are exactly as you saved them.
+    </p>
+  </div>
+
+  <div class="form-side">
+    <div class="form-wrap">
+      <h1>Welcome back</h1>
+      <p class="sub">New here? <a href="#">Create an account</a></p>
+
+      <form id="loginForm" novalidate>
+        <div class="field" id="emailField">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <div class="error-msg">Enter a valid email address.</div>
+        </div>
+
+        <div class="field" id="passwordField">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" />
+          <div class="error-msg">Password must be at least 6 characters.</div>
+        </div>
+
+        <div class="row-between">
+          <label class="remember">
+            <input type="checkbox" id="remember" />
+            Remember me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="submit">Sign in</button>
+
+        <div class="status" id="statusMsg"></div>
+      </form>
+
+      <div class="divider">or continue with</div>
+
+      <div class="oauth">
+        <button type="button" aria-label="Continue with GitHub">GitHub</button>
+        <button type="button" aria-label="Continue with Google">Google</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Terminal typing animation (decorative, respects reduced motion)
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const typedLine = document.getElementById('typedLine');
+  const outputLines = document.getElementById('outputLines');
+  const fullText = 'auth login --user';
+
+  if (prefersReduced) {
+    typedLine.textContent = fullText;
+    outputLines.style.opacity = 1;
+    outputLines.innerHTML = '<span class="ok">✓</span> session ready';
+  } else {
+    let i = 0;
+    function typeChar() {
+      if (i <= fullText.length) {
+        typedLine.textContent = fullText.slice(0, i);
+        i++;
+        setTimeout(typeChar, 55);
+      } else {
+        setTimeout(() => {
+          outputLines.style.transition = 'opacity 0.4s ease';
+          outputLines.style.opacity = 1;
+          outputLines.innerHTML = '<span class="ok">✓</span> session ready';
+        }, 300);
+      }
+    }
+    setTimeout(typeChar, 500);
+  }
+
+  // Form validation
+  const form = document.getElementById('loginForm');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const emailField = document.getElementById('emailField');
+  const passwordField = document.getElementById('passwordField');
+  const statusMsg = document.getElementById('statusMsg');
+
+  function validEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function clearError(field) {
+    field.classList.remove('error');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let hasError = false;
+
+    clearError(emailField);
+    clearError(passwordField);
+    statusMsg.textContent = '';
+    statusMsg.classList.remove('success');
+
+    if (!validEmail(emailInput.value.trim())) {
+      emailField.classList.add('error');
+      hasError = true;
+    }
+
+    if (passwordInput.value.length < 6) {
+      passwordField.classList.add('error');
+      hasError = true;
+    }
+
+    if (hasError) {
+      statusMsg.textContent = 'Fix the highlighted fields to continue.';
+      return;
+    }
+
+    // Placeholder for real auth call
+    statusMsg.textContent = 'Signed in successfully.';
+    statusMsg.classList.add('success');
+  });
+
+  // Clear individual field errors as the user types
+  emailInput.addEventListener('input', () => clearError(emailField));
+  passwordInput.addEventListener('input', () => clearError(passwordField));
+</script>
+
+</body>
+</html>
