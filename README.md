@@ -6,6 +6,12 @@ This repository is created for my internship setup task.
 
 Learn AI-assisted software development using Claude Code and Git.
 
+
+## Goals
+
+- Learn Git
+- Learn Claude Code
+
 ## Tech Stack
 
 - Node.js
