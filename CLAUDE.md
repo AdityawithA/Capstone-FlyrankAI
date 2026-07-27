@@ -25,3 +25,11 @@ docs:
 refactor:
 style:
 test:
+
+## Project Rules
+
+1. Every form must include client-side validation before submission.
+
+2. All user inputs must use accessible labels and appropriate ARIA attributes.
+
+3. Before completing any feature, review the implementation for correctness, accessibility, responsiveness, and edge cases.
