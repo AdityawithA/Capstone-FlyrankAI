@@ -1,33 +1,36 @@
 # Aditya Kumar — Personal Portfolio
 
-A responsive one-page portfolio prepared for the FlyRank AI Fluency personal website assignment.
+> Full-Stack Developer · AI/ML Engineer
 
-## Includes
-- Personal positioning and introduction
-- Featured projects
-- Skills and technical toolkit
-- FlyRank capstone section
-- Future work / posts area
-- Contact links
-- LinkedIn and GitHub links
-- Responsive mobile layout
-- `DNS-WALKTHROUGH.md` for the assignment deliverable
+🌐 **Live Portfolio:** https://aditya-kumar-flyrankai.netlify.app/
 
-## Run locally
-No build step is required. Open `index.html` directly in a browser or use VS Code Live Server.
+## About
 
-## Deploy on Netlify
-1. Create/login to Netlify.
-2. Use **Add new project → Import an existing project** for Git, or Netlify Drop for the folder.
-3. No build command is required.
-4. Publish directory is the project root (`.`).
-5. Rename the site in Netlify so the free URL is suitable for a CV.
-6. Test the public HTTPS URL in an incognito/private window and on a phone.
+A modern, responsive personal portfolio showcasing my software development journey, AI/ML projects, full-stack applications, technical skills, and capstone work.
 
-## Before submitting
-Update the booking link in `index.html` if you have a preferred booking URL.
+## Featured Projects
 
-Submit the live HTTPS URL and `DNS-WALKTHROUGH.md`, then add the live URL to LinkedIn and your CV.
+- **InterviewAce AI** — AI-powered interview preparation platform
+- **CampusSync** — Full-stack college management platform
+- **SMS Spam Detection** — Machine learning classification application
+- **Breast Cancer Detection** — Machine learning prediction project
+- **TypeRush** — Interactive typing application
+- **Dezinova** — Departmental club website
 
-## Tech
-HTML5 · CSS3 · JavaScript · Netlify
+## Tech Stack
+
+HTML · CSS · JavaScript · Python · Flask · React · MySQL · SQLite · Machine Learning · AI/LLM APIs
+
+## Links
+
+- 🌐 **Portfolio:** https://aditya-kumar-flyrankai.netlify.app/
+- 💻 **GitHub:** https://github.com/AdityawithA
+- 💼 **LinkedIn:** https://www.linkedin.com/in/aditya-kumar-892099293/
+
+## Deployment
+
+The portfolio is deployed on **Netlify** with a public HTTPS URL.
+
+## DNS Documentation
+
+See [`DNS-WALKTHROUGH.md`](DNS-WALKTHROUGH.md) for the DNS concepts and website request flow covered in the assignment.
