@@ -1,0 +1,14 @@
+WEEK 06 — EXPLAIN IT LIKE YOU BUILT IT
+
+Student: Aditya Kumar
+Project: Aditya AI
+Chosen build part: API failure handling and Retry
+
+Deliverable:
+EXPLANATION.md
+
+Supporting files:
+ARCHITECTURE.md
+LEARNING_NOTES.md
+
+The explanation focuses on a real part of my Week 05 build and describes it in plain words based on the failure cases I tested.
