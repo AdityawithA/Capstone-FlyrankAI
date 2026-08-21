@@ -1,13 +1,10 @@
 node_modules/
-
 .env
-
+.env*
 dist/
-
 build/
-
+.next/
+out/
 *.log
-
 .vscode/
-
 .DS_Store
