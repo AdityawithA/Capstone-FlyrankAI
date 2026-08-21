@@ -1,79 +1,64 @@
-# AI Capstone
+# FlyRank AI Fluency Capstone
 
-A repository created as part of the FlyRank AI internship onboarding process to practise AI-assisted software development using Git, GitHub, and modern development tools.
+<div align="center">
 
----
+## Aditya Kumar
 
-## Project Overview
+**Full-Stack Developer · AI/ML Engineer · AI Product Builder**
 
-This repository demonstrates the setup of a professional software development environment following industry best practices, including version control, documentation, and repository organisation.
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-0b3532?style=for-the-badge)](https://aditya-kumar-flyrankai.netlify.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-AdityawithA-181717?style=for-the-badge&logo=github)](https://github.com/AdityawithA)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya%20Kumar-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aditya-kumar-892099293/)
 
----
-
-## Objectives
-
-- Learn AI-assisted software development
-- Practise Git and GitHub workflows
-- Follow conventional commit standards
-- Build professional documentation
+</div>
 
 ---
 
-## Tech Stack
+## About This Repository
 
-- Node.js
-- Git
-- GitHub
-- Visual Studio Code
-- Claude Code
+This repository contains my complete **FlyRank AI Fluency Capstone journey**.
+
+It documents the progression from understanding AI-assisted development and building simple web experiences to designing AI workflows, integrating tools, building resilient AI interfaces, designing agents, and shipping a public personal portfolio.
+
+The goal of the capstone is not simply to generate code with AI.
+
+It is to learn how to:
+
+- Understand AI-assisted development
+- Write better prompts and instructions
+- Evaluate AI-generated output
+- Build and deploy real applications
+- Design AI workflows
+- Work with tools and external data
+- Understand agents and MCP
+- Handle failures and edge cases
+- Build reliable AI interfaces
+- Document technical decisions
+- Ship projects publicly
+- Explain and take ownership of the work
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```text
-.
-├── README.md
-├── LICENSE
+Capstone-FlyrankAI/
+│
+├── Capstone-AIFluency/
+│
+├── Week 01/
+│
+├── Week 02/
+│
+├── Week-03/
+│
+├── Week-04/
+│
+├── Week-05/
+│
+├── Week-06/
+│
 ├── .gitignore
-└── CLAUDE.md
-```
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/your-repository.git
-```
-
-Open the project:
-
-```bash
-cd your-repository
-code .
-```
-
----
-
-## Usage
-
-This repository serves as a foundation for learning AI-assisted software development and maintaining a clean, professional Git workflow.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-## Author
-
-**Aditya Kumar**
-
-GitHub: https://github.com/AdityawithA
-
-LinkedIn: https://www.linkedin.com/in/aditya-kumar-892099293/
+├── CLAUDE.md
+├── LICENSE
+└── README.md
