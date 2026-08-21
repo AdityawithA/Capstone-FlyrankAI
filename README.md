@@ -6,7 +6,7 @@
 
 **Full-Stack Developer · AI/ML Engineer · AI Product Builder**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-0b3532?style=for-the-badge)](https://aditya-kumar-flyrankai.netlify.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-0b3532?style=for-the-badge)](https://aditya-portfoli0.netlify.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-AdityawithA-181717?style=for-the-badge&logo=github)](https://github.com/AdityawithA)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Aditya%20Kumar-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aditya-kumar-892099293/)
 
