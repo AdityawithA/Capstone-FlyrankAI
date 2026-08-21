@@ -681,7 +681,7 @@ It includes areas such as:
 
 ## 🚀 Live Portfolio
 
-**https://aditya-kumar-flyrankai.netlify.app/**
+**https://aditya-portfoli0.netlify.app/**
 
 The portfolio is publicly deployed and accessible over HTTPS.
 
@@ -1096,7 +1096,7 @@ https://github.com/AdityawithA/Dezinova
 
 | Resource | Link |
 |---|---|
-| 🌐 Portfolio | [aditya-kumar-flyrankai.netlify.app](https://aditya-kumar-flyrankai.netlify.app/) |
+| 🌐 Portfolio | [aditya-portfoli0.netlify.app/](https://aditya-portfoli0.netlify.app/) |
 | 💻 GitHub | [github.com/AdityawithA](https://github.com/AdityawithA) |
 | 💼 LinkedIn | [linkedin.com/in/aditya-kumar-892099293](https://www.linkedin.com/in/aditya-kumar-892099293/) |
 | 🤖 InterviewAce AI | [GitHub Repository](https://github.com/AdityawithA/InterviewAce-AI) |
@@ -1377,7 +1377,7 @@ It shows how individual assignments connect to a broader goal of becoming a deve
 
 The latest public representation of this work is available here:
 
-## [aditya-kumar-flyrankai.netlify.app](https://aditya-portfoli0.netlify.app/)
+## [Aditya's Portfolio](https://aditya-portfoli0.netlify.app/)
 
 The portfolio contains my projects, technical skills, professional information, and selected work from the development journey.
 
