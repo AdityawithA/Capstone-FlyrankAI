@@ -1,0 +1,359 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(45, 91, 255, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #071126 0%,
+      #09172d 50%,
+      #03151b 100%
+    );
+  color: #f5f7ff;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  padding: 80px 0 50px;
+}
+
+.eyebrow {
+  margin-bottom: 28px;
+  color: #91a9ff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin-bottom: 24px;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+}
+
+.hero-description {
+  max-width: 850px;
+  color: #aab9d5;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+  padding: 20px 0 90px;
+}
+
+.contact-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 55px);
+  background: rgba(15, 25, 43, 0.88);
+  border: 1px solid rgba(145, 169, 255, 0.18);
+  border-radius: 28px;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+}
+
+.contact-header {
+  margin-bottom: 38px;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #8fa7ff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.contact-header h2 {
+  margin-bottom: 15px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.contact-header p {
+  max-width: 700px;
+  color: #9eacc5;
+  font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.form-group label {
+  color: #edf2ff;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid rgba(150, 174, 230, 0.25);
+  border-radius: 14px;
+  outline: none;
+  background: #081224;
+  color: #f5f7ff;
+  font: inherit;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.form-group input {
+  min-height: 58px;
+  padding: 0 17px;
+}
+
+.form-group textarea {
+  min-height: 170px;
+  padding: 16px 17px;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #65738e;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4d7cff;
+  background: #0a162b;
+  box-shadow:
+    0 0 0 4px rgba(77, 124, 255, 0.12);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+#submitButton {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #3975ff,
+    #2762e9
+  );
+  color: white;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+#submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 30px rgba(48, 105, 255, 0.3);
+}
+
+#submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+#submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status {
+  min-height: 24px;
+  margin-top: 4px;
+  font-weight: 700;
+}
+
+.status.success {
+  color: #67e8a4;
+}
+
+.status.error {
+  color: #ff8b8b;
+}
+
+.form-note {
+  margin-top: 24px;
+  color: #7183a4;
+  font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  padding: 35px 0 50px;
+  border-top: 1px solid rgba(145, 169, 255, 0.1);
+}
+
+footer p {
+  margin-bottom: 18px;
+  color: #7183a4;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #91a9ff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .hero {
+    padding: 55px 0 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 15vw, 4.5rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .contact-section {
+    padding-bottom: 60px;
+  }
+
+  .contact-card {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
+  .form-group input {
+    min-height: 54px;
+  }
+
+  #submitButton {
+    min-height: 56px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

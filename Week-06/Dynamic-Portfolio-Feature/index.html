@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Aditya Kumar — Software Developer, Full Stack Developer and AI/ML enthusiast."
+  />
+
+  <meta
+    name="author"
+    content="Aditya Kumar"
+  />
+
+  <title>Aditya Kumar | Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!--
+    ============================================================
+    NETLIFY FORM DETECTION
+    ============================================================
+    This hidden form allows Netlify to detect the contact form
+    during deployment.
+
+    IMPORTANT:
+    Do not remove this form.
+  -->
+
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    hidden
+  >
+    <input type="hidden" name="form-name" value="contact" />
+
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>
+
+
+  <!-- =========================================================
+       MAIN PAGE
+       ========================================================= -->
+
+  <main>
+
+    <!-- HERO / INTRODUCTION -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          WEEK 08 • DYNAMIC FEATURE
+        </p>
+
+        <h1>
+          Let's build something useful.
+        </h1>
+
+        <p class="hero-description">
+          Have a project, internship opportunity, or idea?
+          Send me a message.
+          This form is the portfolio's one live dynamic feature.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT / DYNAMIC FEATURE
+         ======================================================= -->
+
+    <section class="contact-section">
+
+      <div class="container">
+
+        <div class="contact-card">
+
+          <div class="contact-header">
+
+            <span class="section-label">
+              GET IN TOUCH
+            </span>
+
+            <h2>
+              Have something in mind?
+            </h2>
+
+            <p>
+              Whether it's a project, internship opportunity,
+              collaboration, or simply an interesting idea,
+              I'd love to hear from you.
+            </p>
+
+          </div>
+
+
+          <!-- =================================================
+               VISIBLE NETLIFY FORM
+               ================================================= -->
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            id="contactForm"
+          >
+
+            <!-- Required by Netlify -->
+
+            <input
+              type="hidden"
+              name="form-name"
+              value="contact"
+            />
+
+
+            <!-- Honeypot field -->
+
+            <div
+              style="display:none"
+              aria-hidden="true"
+            >
+              <label>
+                Don't fill this out if you're human:
+
+                <input
+                  name="bot-field"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </label>
+            </div>
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+              <label for="name">
+                Name
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="7"
+                placeholder="Tell me about your project, opportunity, or idea..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+              type="submit"
+              id="submitButton"
+            >
+              Send message
+            </button>
+
+
+            <!-- STATUS -->
+
+            <p
+              id="status"
+              class="status"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+          </form>
+
+
+          <p class="form-note">
+            Your message is securely delivered through Netlify Forms.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         FOOTER
+         ======================================================= -->
+
+    <footer>
+
+      <div class="container">
+
+        <p>
+          Built as a Week 08 portfolio backend/data-flow exercise
+          using Netlify Forms.
+        </p>
+
+        <div class="footer-links">
+
+          <a
+            href="https://github.com/AdityawithA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/aditya-kumar-892099293/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="mailto:adityakumar2655@gmail.com"
+          >
+            Email
+          </a>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    const form = document.getElementById("contactForm");
+    const submitButton = document.getElementById("submitButton");
+    const status = document.getElementById("status");
+
+
+    form.addEventListener("submit", async function (event) {
+
+      event.preventDefault();
+
+
+      /*
+       * Prevent multiple submissions while the request
+       * is being processed.
+       */
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      status.textContent = "";
+      status.className = "status";
+
+
+      /*
+       * Convert the form into URL encoded data.
+       *
+       * Netlify Forms expects the form-name field as well.
+       */
+
+      const formData = new FormData(form);
+
+      const encodedData = new URLSearchParams();
+
+
+      for (const [key, value] of formData.entries()) {
+        encodedData.append(key, value);
+      }
+
+
+      try {
+
+        /*
+         * Submit to the current Netlify site.
+         *
+         * The hidden form above ensures Netlify knows that
+         * "contact" is a registered form.
+         */
+
+        const response = await fetch("/", {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/x-www-form-urlencoded"
+          },
+
+          body: encodedData.toString()
+
+        });
+
+
+        /*
+         * Netlify should return a successful response.
+         */
+
+        if (!response.ok) {
+          throw new Error(
+            `Submission failed: ${response.status}`
+          );
+        }
+
+
+        /*
+         * SUCCESS
+         */
+
+        form.reset();
+
+        status.textContent =
+          "Message sent successfully! I'll get back to you soon.";
+
+        status.className =
+          "status success";
+
+
+      } catch (error) {
+
+        /*
+         * ERROR
+         */
+
+        console.error(
+          "Form submission error:",
+          error
+        );
+
+        status.textContent =
+          "Something went wrong. Please try again.";
+
+        status.className =
+          "status error";
+
+
+      } finally {
+
+        /*
+         * Restore the button regardless of success/failure.
+         */
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+          "Send message";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
+
