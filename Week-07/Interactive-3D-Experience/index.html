@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive 3D AI Neural Core by Aditya Kumar">
+<title>AI Neural Core — Week 07</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">WEEK 07 · INTERACTIVE 3D</p>
+    <h1>AI Neural Core</h1>
+    <p class="lede">A lightweight 3D visualization of an AI system's core. Rotate it, change its material, inspect its geometry, and control its motion.</p>
+    <div class="actions">
+      <a class="button primary" href="#experience">Explore the core</a>
+      <a class="button" href="https://aditya-kumar-flyrankai.netlify.app/" target="_blank" rel="noreferrer">Portfolio</a>
+    </div>
+  </div>
+  <aside class="stat"><span>Built for</span><strong>Browser + Mobile</strong><small>Three.js · WebGL · responsive controls</small></aside>
+</section>
+
+<section id="experience" class="experience">
+  <div class="heading">
+    <div><p class="eyebrow">LIVE SCENE</p><h2>Inspect the neural core</h2></div>
+    <p>Drag to orbit · pinch/scroll to zoom · use the controls below.</p>
+  </div>
+  <div class="scene-shell">
+    <div id="scene" class="scene" aria-label="Interactive 3D neural core"></div>
+    <div id="loading" class="loading" role="status">Loading 3D scene…</div>
+    <div id="fallback" class="fallback" hidden>
+      <div class="orb"></div><h3>Static fallback</h3>
+      <p>Motion is reduced or WebGL is unavailable. The experience stays readable instead of forcing a heavy animation.</p>
+    </div>
+    <div class="controls">
+      <label>Material<select id="material">
+        <option value="cyan">Neural Cyan</option><option value="violet">Signal Violet</option>
+        <option value="amber">Energy Amber</option><option value="white">Titanium</option>
+      </select></label>
+      <label>Auto rotate<input id="speed" type="range" min="0" max="1.5" step=".05" value=".45"></label>
+      <label class="toggle"><input id="wireframe" type="checkbox"> Wireframe</label>
+      <button id="reset" class="button small" type="button">Reset view</button>
+    </div>
+  </div>
+</section>
+
+<section class="details">
+  <article><p class="eyebrow">WHY THIS SCENE</p><h2>One meaningful interaction, not decoration.</h2>
+  <p>The core combines a central sphere, transparent shell, signal rings and orbiting nodes. Material switching changes the visual language while wireframe mode exposes the geometry.</p></article>
+  <article><p class="eyebrow">PERFORMANCE</p><h2>Small geometry. No external model.</h2>
+  <p>The scene uses procedural geometry, lazy initialization, capped pixel density and a reduced-motion/static fallback instead of shipping a large model.</p></article>
+</section>
+
+<section class="notes"><p class="eyebrow">FE-10 LENS</p><h2>Performance note</h2>
+<p>The main cost is the WebGL canvas. This build avoids a large model download, limits device pixel ratio, uses simple geometry and pauses rendering when the scene is outside the viewport.</p></section>
+</main>
+<footer><span>Aditya Kumar · Week 07</span><a href="https://github.com/AdityawithA" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/aditya-kumar-892099293/" target="_blank" rel="noreferrer">LinkedIn</a></footer>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
