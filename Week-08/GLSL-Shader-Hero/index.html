@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aditya Kumar — Shader Hero</title>
+<meta name="description" content="An interactive GLSL fragment-shader hero built by Aditya Kumar.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="hero">
+<canvas id="shader" aria-hidden="true"></canvas>
+<div class="overlay"></div>
+<section class="content">
+<p class="eyebrow">ADITYA KUMAR • AI + FULL-STACK ENGINEER</p>
+<h1>Ideas, shaped<br><span>into software.</span></h1>
+<p class="intro">A personalized WebGL fragment shader turns the portfolio background into a living visual signature without getting in the way of the work.</p>
+<div class="actions">
+<a class="button primary" href="#about">Explore</a>
+<a class="button secondary" href="https://github.com/AdityawithA" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</div>
+<p class="hint">Move your cursor across the scene • The shader responds to you</p>
+</section>
+<div class="status" id="status" aria-live="polite">WebGL shader active</div>
+</main>
+<section class="about" id="about">
+<p class="eyebrow">THE IDEA</p>
+<h2>The visual layer should feel alive, not loud.</h2>
+<p>The shader combines time, screen resolution, and pointer position to create a flowing field of light. The content stays above it with a dark overlay so readability remains the priority.</p>
+</section>
+<script src="shader.js" defer></script>
+</body>
+</html>
