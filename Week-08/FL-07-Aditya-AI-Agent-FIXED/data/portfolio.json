@@ -1,0 +1,49 @@
+{
+  "name": "Aditya Kumar",
+  "education": "B.Tech in Computer Science and Design, Dr. BC Roy Engineering College, expected 2027",
+  "summary": "Computer Science and Design student focused on full-stack web development, AI/ML and practical software projects.",
+  "skills": {
+    "languages": ["Python", "Java", "JavaScript", "HTML5", "CSS3"],
+    "frontend": ["React", "Bootstrap", "responsive UI", "Chrome DevTools"],
+    "backend": ["Flask", "Node.js"],
+    "databases": ["MySQL", "SQLite"],
+    "ai_ml": ["Python", "Pandas", "NumPy", "machine learning", "Gemini/Groq API integration"],
+    "tools": ["Git", "GitHub", "VS Code", "Render", "Netlify"]
+  },
+  "projects": [
+    {
+      "name": "InterviewAce AI",
+      "stack": ["Python", "Flask", "SQLite", "Gemini/Groq API"],
+      "description": "AI-powered interview preparation platform with mock interviews, role-specific questions and response evaluation.",
+      "evidence": "Live project; deployed on Render."
+    },
+    {
+      "name": "CampusSync",
+      "stack": ["Python", "Flask", "MySQL/SQLite", "HTML", "CSS", "JavaScript"],
+      "description": "College platform for events, announcements, student activities, authentication, event registration and role-based dashboards.",
+      "evidence": "Full-stack project."
+    },
+    {
+      "name": "SMS Spam Detection",
+      "stack": ["Python", "Flask", "Machine Learning"],
+      "description": "ML application for classifying SMS messages as spam or non-spam.",
+      "evidence": "Deployed on Render."
+    },
+    {
+      "name": "Breast Cancer Detection Model",
+      "stack": ["Python", "Pandas", "NumPy", "Machine Learning"],
+      "description": "Machine-learning classification project with reported cross-validation performance.",
+      "evidence": "Deployed web application."
+    },
+    {
+      "name": "Dezinova Club Website",
+      "stack": ["HTML", "CSS", "JavaScript"],
+      "description": "Departmental club website focused on responsive presentation and web design.",
+      "evidence": "Live on Netlify."
+    }
+  ],
+  "experience": [
+    "J.P. Morgan Forage software engineering simulation credential",
+    "Internship/capstone work involving AI and full-stack development"
+  ]
+}
