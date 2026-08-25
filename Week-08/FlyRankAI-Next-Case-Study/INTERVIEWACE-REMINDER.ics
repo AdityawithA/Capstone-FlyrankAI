@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//FlyRankAI//Next Case Study//EN
+BEGIN:VEVENT
+UID:interviewace-case-study-flyrankai-20260901@example.com
+DTSTAMP:20260825T000000Z
+DTSTART:20260901T100000
+RRULE:FREQ=WEEKLY
+SUMMARY:Add InterviewAce AI case study
+DESCRIPTION:Add the InterviewAce AI case study to the portfolio using the Problem -> What I did -> What came of it structure. Verify links, screenshot, evidence, and mobile layout. Stop the reminder when the case study is live.
+END:VEVENT
+END:VCALENDAR
