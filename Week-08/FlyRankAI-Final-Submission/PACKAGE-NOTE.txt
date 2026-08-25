@@ -1,0 +1,1 @@
+This package was prepared from the Assignment 8.1 and 8.2 requirements shown in the supplied screenshots. Replace all ADD placeholders with verified URLs/results before final submission.
