@@ -21,7 +21,7 @@ The app takes a target software role or job description, retrieves Aditya Kumar'
 
 Set the final Vercel URL here after deployment:
 
-**Production:** `https://YOUR-PROJECT.vercel.app`
+**Production:** `https://capstone-flyrank-ai-e23c.vercel.app/`
 
 ## Features
 
